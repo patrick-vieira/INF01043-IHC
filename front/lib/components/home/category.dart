@@ -10,16 +10,15 @@ class Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => navigate(context),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: EdgeInsets.all(15),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        InkWell(
+          onTap: () => navigate(context),
+          borderRadius: BorderRadius.circular(5),
+          child: Container(
             width: 300,
-            height: 80,
-            margin: EdgeInsets.symmetric(vertical: 20),
+            height: 60,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -29,7 +28,7 @@ class Category extends StatelessWidget {
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
               ),
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(5),
             ),
             child: Center(
                 child: Text(
@@ -37,8 +36,8 @@ class Category extends StatelessWidget {
               style: Theme.of(context).textTheme.headline6,
             )),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

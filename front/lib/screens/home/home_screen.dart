@@ -40,13 +40,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("IHC"),
-      ),
+
       body: Column(
         children: [
           const SizedBox(
-            height: 24,
+            height: 54,
           ),
           SizedBox(
             height: 120,
@@ -56,15 +54,20 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 54,
+            height: 100,
           ),
           Category(title: "Pesquisar", color: Colors.green, navigate: _navigateToSearch),
+
+          const SizedBox(
+            height: 70,
+          ),
           Category(title: "Ler QR", color: Colors.red, navigate: _navigateToReader),
+
+          const SizedBox(
+            height: 70,
+          ),
           Category(title: "Sobre", color: Colors.yellow, navigate: _navigateToAbout),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
       ),
     );
   }
