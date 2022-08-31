@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
+
 
 class ReaderScreen extends StatelessWidget {
   const ReaderScreen({Key? key}) : super(key: key);
@@ -9,7 +11,16 @@ class ReaderScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Center(child: Text("leitor")),
       ),
-      body: const Center(child: Text("Leitor")),
+      body: MobileScanner(
+        allowDuplicates: false,
+        onDetect: (barcode, args) {
+          if (barcode.rawValue == null) {
+            debugPrint('Failed to scan Barcode');
+          } else {
+            final String code = barcode.rawValue!;
+            debugPrint('Barcode found! $code');
+          }
+        }),
     );
   }
 }
