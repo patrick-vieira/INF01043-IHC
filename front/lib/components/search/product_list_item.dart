@@ -25,7 +25,7 @@ class ProductListItem extends StatelessWidget {
             children: [
               FittedBox(
                 child: Text(
-                  'R\$ ${product.price}',
+                  'R\$ ${product.price.toStringAsFixed(2)}',
                   style: const TextStyle(
                     fontSize: 20,
                   ),
