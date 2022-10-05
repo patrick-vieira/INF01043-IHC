@@ -102,7 +102,7 @@ def parse_products(resolved_url):
     return {
         'updated': updated_products_count,
         'new': new_products_count,
-        'nf_date': date
+        'nf_date': "{}/{}/{}".format(date.day, date.month, date.year)
     }
 
 
