@@ -41,7 +41,7 @@ class _SearchFormState extends State<SearchForm> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () { submitForm(); },
                 color: Colors.green,
                 icon: const Icon(Icons.search),
               ),
