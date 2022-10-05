@@ -156,3 +156,7 @@ def search(request):
     data = serializers.serialize('json', list(results), fields=('name', 'type', 'price', 'shop', 'address', 'lastDate'))
 
     return HttpResponse(data, content_type="application/json")
+
+
+def web(request):
+    return HttpResponse("data", content_type="application/json")
