@@ -55,13 +55,13 @@ class ReaderScreen extends StatelessWidget {
               } else {
                 final String code = barcode.rawValue!;
                 debugPrint('Barcode found! $code');
-                if (false) {
+                if (true) {
                   showDialog<String>(
                     context: context,
                     builder: (BuildContext context) => AlertDialog(
                       title: const Text('EconomizaTchê'),
                       content:
-                          Text('Nota fiscal adicionada com sucesso ao nosso banco de dados. \n\n Obrigado! \n\n $code'),
+                          const Text('Nota fiscal enviada com sucesso. \n\n Obrigado!'),
                       actions: <Widget>[
                         TextButton(
                           onPressed: () => Navigator.pop(context, code),
