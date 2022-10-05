@@ -55,7 +55,7 @@ class ReaderScreen extends StatelessWidget {
               } else {
                 final String code = barcode.rawValue!;
                 debugPrint('Barcode found! $code');
-                if (true) {
+                if (false) {
                   showDialog<String>(
                     context: context,
                     builder: (BuildContext context) => AlertDialog(
@@ -72,6 +72,8 @@ class ReaderScreen extends StatelessWidget {
                   ).then(
                     (value) => Navigator.pop(context, code),
                   );
+                } else {
+                  Navigator.pop(context, code);
                 }
               }
             }));
