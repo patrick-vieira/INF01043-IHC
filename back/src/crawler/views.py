@@ -79,7 +79,7 @@ def parse_products(resolved_url):
         if product.exists():
             product = product.first()
 
-            if product.lastDate <= date:
+            if product.lastDate < date:
                 product.price = float(product_line[0][4].text.replace(',', '.'))
                 product.lastDate = date
                 product.shop = shop
@@ -102,6 +102,7 @@ def parse_products(resolved_url):
     return {
         'updated': updated_products_count,
         'new': new_products_count,
+        'nf_date': date
     }
 
 
