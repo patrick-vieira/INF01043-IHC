@@ -21,6 +21,9 @@ def get_user_stock(request):
     product = post['product']
     # product = request.POST['product']
 
+    print(seller_email)
+    print(product)
+
     seller_product_inventory = SellerInventory.objects.filter(seller__email=seller_email, product__name=product).first()
 
     if not seller_product_inventory:
